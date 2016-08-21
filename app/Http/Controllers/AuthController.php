@@ -38,13 +38,13 @@ class AuthController extends Controller
                 'estado' => $user->proyectos[$i]->estado, 'convocatoria' => $user->proyectos[$i]->convocatoria->name];
 
             for($x = 0; $x < count($user->proyectos[$i]->proyectos_integrantes); $x++){
-                $data['proyectos'][$i]['integrantes'] = array('nombre' => $user->proyectos[$i]->proyectos_integrantes[$x]->nombre,
+                $data['proyectos'][$i]['integrantes'][] = array('nombre' => $user->proyectos[$i]->proyectos_integrantes[$x]->nombre,
                     'email' => $user->proyectos[$i]->proyectos_integrantes[$x]->email, 'id' => $user->proyectos[$i]->proyectos_integrantes[$x]->id);
             }
 
 
             for($x = 0; $x < count($user->proyectos[$i]->proyectos_evaluadores); $x++){
-                $data['proyectos'][$i]['evaluadores'] = array('nombre' => $user->proyectos[$i]->proyectos_evaluadores[$x]->convocatoria_evaluador->usuario->nombre);
+                $data['proyectos'][$i]['evaluadores'][] = array('nombre' => $user->proyectos[$i]->proyectos_evaluadores[$x]->convocatoria_evaluador->usuario->nombre);
             }
         }
 
@@ -53,7 +53,7 @@ class AuthController extends Controller
             if($user->tipo == 1 && $user->password == $password)
             {
                 return response()->json([
-                    'response' => $data],200);
+                    'data' => $data],200);
             }
         }
 
