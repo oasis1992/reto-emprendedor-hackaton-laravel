@@ -54,13 +54,24 @@ Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
         'as' => 'convocatoria_store'
     ]);
 
+// seccion convocatoria
 
-
+    Route::get('convocatorias/seccion-convocatoria/{convocatoria_id}',[
+        'uses' => 'SeccionConvocatoriaController@create',
+        'as' => 'secciones_convocatoria_create'
+    ]);
 
     Route::get('convocatorias/seccion-convocatorias/{convocatoria_id}',[
         'uses' => 'SeccionConvocatoriaController@index',
         'as' => 'secciones_convocatoria_index'
     ]);
+
+    Route::post('convocatorias/seccion-convocatorias/store',[
+        'uses' => 'SeccionConvocatoriaController@store',
+        'as' => 'secciones_convocatoria_store'
+    ]);
+
+    // seccion convocatoria
 
     Route::get('convocatorias/seccion-convocatorias/seccion-campo/{seccion_convocatoria_id}',[
         'uses' => 'SeccionCampoController@index',

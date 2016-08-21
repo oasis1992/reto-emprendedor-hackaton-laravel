@@ -26,4 +26,11 @@
         @endif
         </tbody>
     </table>
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a href="{{ route('secciones_convocatoria_create', ['convocatoria_id' => $convocatoria_id]) }}" class="btn-floating btn-large red">
+            <i class="large material-icons">add</i>
+        </a>
+
+    </div>
 @endsection
