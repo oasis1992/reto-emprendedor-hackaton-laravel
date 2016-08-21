@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('register_user.index');
 });
 
 Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
@@ -21,6 +21,8 @@ Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
         'as' => 'main'
     ]);
 
+    Route::get('login/movil/{email}/{password}',[
+        'uses' => 'AuthController@login_movil',
+        'as' => 'login_movil'
+    ]);
 });
-
-

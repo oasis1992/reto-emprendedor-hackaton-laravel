@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProyectosIntegrantesTable extends Migration
+class CreateConvocatoriaSeccionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,12 @@ class CreateProyectosIntegrantesTable extends Migration
      */
     public function up()
     {
-        Schema::create('proyectos_integrantes', function (Blueprint $table) {
+        Schema::create('convocatoria_seccion', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('convocatoria_id')->unsigned();
+            $table->string('nombre');
+
+            $table->foreign('convocatoria_id')->references('id')->on('convocatorias')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +29,6 @@ class CreateProyectosIntegrantesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('proyectos_integrantes');
+        Schema::drop('convocatoria_seccion');
     }
 }
