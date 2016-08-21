@@ -12,7 +12,7 @@ class ProyectoEvaluacion extends Model
         return $this->belongsTo('App\CategoriaMetrica');
     }
 
-    public function articles(){
+    public function proyecto_evaluador(){
         return $this->belongsToMany('App\ProyectoEvaluador')->whitTimestamps; // esto se usa para las relaciones M:M
         //whitTimestamps sirve para solucionar el problema con la fecha de creación y actualización
     }

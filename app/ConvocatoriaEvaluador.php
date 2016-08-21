@@ -9,7 +9,7 @@ class ConvocatoriaEvaluador extends Model
     protected $table = "convocatoria_evaluador";
 
     public function usuario(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Usuario');
     }
 
     public function convocatoria(){

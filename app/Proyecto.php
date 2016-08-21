@@ -10,7 +10,7 @@ class Proyecto extends Model
     //protected $fillable = [];
 
     public function usuario(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Usuario');
     }
 
     public function convocatoria(){
@@ -32,5 +32,7 @@ class Proyecto extends Model
     public function proyectos_evaluadores(){
         return $this->hasMany('App\ProyectoEvaluador');
     }
+
+
 
 }
