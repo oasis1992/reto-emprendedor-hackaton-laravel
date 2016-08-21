@@ -9,6 +9,7 @@
         <thead>
           <tr>
               <th data-field="id">Nombre de la organizacion</th>
+              <th data-field="id">Ver Convocatorias</th>
               <th data-field="price">Acciones</th>
           </tr>
         </thead>
@@ -17,6 +18,7 @@
           @foreach($org as $org1)
           <tr>
             <td>{{$org1->nombre}}</td>
+            <td></td>
             <td>
               <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Acciones!</a>
               <!-- Dropdown Structure -->
