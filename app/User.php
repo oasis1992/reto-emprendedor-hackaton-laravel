@@ -26,4 +26,18 @@ class User extends Model
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function proyectos(){
+        return $this->hasMany('App\Proyecto');
+    }
+
+
+    public function organizaciones(){
+        return $this->hasMany('App\Organizacion');
+    }
+
+    public function convocatorias_evaluadores(){
+        return $this->hasMany('App\ConvocatoriaEvaluador');
+    }
+
 }

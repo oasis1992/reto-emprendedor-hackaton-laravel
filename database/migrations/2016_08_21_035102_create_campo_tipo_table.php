@@ -14,6 +14,7 @@ class CreateCampoTipoTable extends Migration
     {
         Schema::create('campo_tipo', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
             $table->timestamps();
         });
     }

@@ -14,6 +14,10 @@ class CreateConvocatoriaSeccionTable extends Migration
     {
         Schema::create('convocatoria_seccion', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('convocatoria_id')->unsigned();
+            $table->string('nombre');
+
+            $table->foreign('convocatoria_id')->references('id')->on('convocatorias')->onDelete('cascade');
             $table->timestamps();
         });
     }

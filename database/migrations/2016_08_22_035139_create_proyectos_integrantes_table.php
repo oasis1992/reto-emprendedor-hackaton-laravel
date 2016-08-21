@@ -14,6 +14,12 @@ class CreateProyectosIntegrantesTable extends Migration
     {
         Schema::create('proyectos_integrantes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->string('email')->unique();
+
+            $table->integer('proyecto_id')->unsigned();
+            $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -25,6 +31,6 @@ class CreateProyectosIntegrantesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('proyectos_integrantes');
+        Schema::drop('proyecto_valores');
     }
 }
