@@ -14,7 +14,12 @@ class CreateProyectoEvaluacionTable extends Migration
     {
         Schema::create('proyecto_evaluacion', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('categoria_metrica_id')->unsigned();
+            $table->integer('proyecto_evaluador_id')->unsigned();
+            $table->integer('porcentaje');
+
+            $table->foreign('categoria_metrica_id')->references('id')->on('categoria_metrica')->onDelete('cascade');
+            $table->foreign('proyecto_evaluador_id')->references('id')->on('proyecto_evaluador')->onDelete('cascade');
         });
     }
 

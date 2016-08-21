@@ -22,7 +22,7 @@ class AuthController extends Controller
         {
             if($user->tipo == 1 && $user->password == $password)
             {
-                return response()->json(['response' => true, 'nombre' => $user->nombre],200);
+                return response()->json(['id' => $user->id,'response' => true, 'nombre' => $user->nombre],200);
             }
         }
 

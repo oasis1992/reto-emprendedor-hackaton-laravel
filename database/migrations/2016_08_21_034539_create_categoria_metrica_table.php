@@ -14,6 +14,11 @@ class CreateCategoriaMetricaTable extends Migration
     {
         Schema::create('categoria_metrica', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->integer('porcentaje');
+            $table->integer('convocatoria_categoria_id')->unsigned();
+
+            $table->foreign('convocatoria_categoria_id')->references('id')->on('convocatoria_categoria')->onDelete('cascade');
             $table->timestamps();
         });
     }
