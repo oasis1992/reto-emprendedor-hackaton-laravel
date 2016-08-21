@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Organizacion extends Model
 {
-    protected $table ="organizacion";
+    protected $table ="organizaciones";
+    protected $fillable = [
+        'id','nombre','usuario_id'
+    ];
     public function usuario(){
         return $this->belongsTo('App\Usuario');
     }
