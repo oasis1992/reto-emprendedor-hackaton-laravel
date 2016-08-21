@@ -11,7 +11,8 @@
         "laracasts/flash": "^2.0",
         "nesbot/carbon": "^1.21",
         "cviebrock/eloquent-sluggable": "^3.1",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "softon/sms": "dev-master" 
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
