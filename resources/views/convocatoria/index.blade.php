@@ -38,7 +38,7 @@
         </tbody>
     </table>
     <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a href="{{ route('convocatoria_create') }}" class="btn-floating btn-large red">
+        <a href="{{ route('convocatoria_create', ['organizacion_id' =>$organizacion_id]) }}" class="btn-floating btn-large red">
             <i class="large material-icons">add</i>
         </a>
 

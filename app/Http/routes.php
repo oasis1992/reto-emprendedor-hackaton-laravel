@@ -44,7 +44,7 @@ Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
         'as' => 'convocatoria_index'
     ]);
 
-    Route::get('convocatorias/create',[
+    Route::get('convocatorias/create/{organizacion_id}',[
         'uses' => 'ConvocatoriasController@create',
         'as' => 'convocatoria_create'
     ]);
@@ -70,6 +70,7 @@ Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
     Route::get('convocatorias/seccion-convocatorias/seccion-campo/{seccion_convocatoria_id}',[
         'uses' => 'SeccionCampoController@index',
         'as' => 'seccion_campo_index'
+        ]);
 
     Route::get('alta/org/',[
         'uses' => 'alt_organizacionController@index',
