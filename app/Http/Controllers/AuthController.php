@@ -18,15 +18,15 @@ class AuthController extends Controller
     public function login_movil($email, $password)
     {
         $user = User::where('email',$email)->first();
-        if($login = Auth::attempt(['email'=> $email, 'password'=> $password]))
+        if($user)
         {
-            if($user->tipo == 1 )
+            if($user->tipo == 1 && $user->password == $password)
             {
-                return response()->json(['response' => true]);
+                return response()->json(['response' => true, 'nombre' => $user->nombre],200);
             }
         }
 
-        return response()->json(['response' => false]);
+        return response()->json(['response' => false],200);
     }
 
     public function logout(){
