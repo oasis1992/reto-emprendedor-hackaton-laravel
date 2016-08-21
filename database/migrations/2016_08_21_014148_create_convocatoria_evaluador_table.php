@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrganizacionesTable extends Migration
+class CreateConvocatoriaEvaluadorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,14 @@ class CreateOrganizacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('organizaciones', function (Blueprint $table) {
+        Schema::create('convocatoria_evaluador', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
             $table->integer('usuario_id')->unsigned();
-            $table->timestamps();
+            $table->integer('convocatoria_id')->unsigned();
+
             $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('convocatoria_id')->references('id')->on('convocatorias')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +30,6 @@ class CreateOrganizacionesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('organizaciones');
+        Schema::drop('convocatoria_evaluador');
     }
 }
