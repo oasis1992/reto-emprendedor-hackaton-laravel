@@ -12,9 +12,11 @@
 </head>
 <body id="register">
   <nav class="grey darken-4 lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">
-<img src="../../../img/logo.png"/>
-    </a>
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="../../../img/logo.png"/></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Iniciar Sesion</a></li>
+                    <li><a href="badges.html">registracion</a></li>
+                </ul>
     </div>
   </nav>
   <div class="section no-pad-bot" id="index-banner">
