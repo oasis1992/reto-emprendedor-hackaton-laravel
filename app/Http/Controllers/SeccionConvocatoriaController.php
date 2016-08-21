@@ -16,7 +16,7 @@ class SeccionConvocatoriaController extends Controller
         for($i = 0; $i < count($convocatoria); $i++){
             $convocatoria[$i]->convocatoria_secciones;
         }
-        
+
         return View('seccion_convocatoria.index')->with('resultados', $convocatoria)->with('convocatoria_id', $convocatoria_id);
     }
 
