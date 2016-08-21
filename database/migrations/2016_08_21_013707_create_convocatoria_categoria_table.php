@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProyectosTable extends Migration
+class CreateConvocatoriaCategoriaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,11 @@ class CreateProyectosTable extends Migration
      */
     public function up()
     {
-        Schema::create('proyectos', function (Blueprint $table) {
+        Schema::create('convocatoria_categoria', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->integer('convocatoria_id')->unsigned();
+            $table->foreign('convocatoria_id')->references('id')->on('convocatorias')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +28,6 @@ class CreateProyectosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('proyectos');
+        Schema::drop('convocatoria_categoria');
     }
 }
