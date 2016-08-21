@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Organizacion extends Model
 {
+    protected $table ="organizacion";
     public function usuario(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Usuario');
     }
 
     public function convocatorias(){

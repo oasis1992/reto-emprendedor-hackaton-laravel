@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Usuario;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,12 +17,26 @@ class AuthController extends Controller
 
     public function login_movil($email, $password)
     {
-        $user = User::where('email',$email)->first();
+
+        $user = Usuario::where('email',$email)->first();
+
+         $user->proyectos->each(function ($item, $key) {
+               //$item->usuario->convocatorias_evaluadores;
+                $item->proyectos_integrantes;
+          //  dd($item->proyectos_evaluadores);
+               $item->proyectos_evaluadores->each(function($item, $key){
+                       $item;
+               });
+        });
+
+
+
         if($user)
         {
             if($user->tipo == 1 && $user->password == $password)
             {
-                return response()->json(['id' => $user->id,'response' => true, 'nombre' => $user->nombre],200);
+                return response()->json(['id' => $user->id,'response' => true, 'nombre' => $user->nombre,
+                    'data' => $user],200);
             }
         }
 
