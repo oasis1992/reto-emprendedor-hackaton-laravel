@@ -60,10 +60,10 @@
                           </thead>
                           <tbody>
                             @if(count($datos))
-                          @for($i=0;$i < count($datos[0]->convocatoria_categoria->categorias_metricas[0]);$i++)
+                          @for($i=0;$i < count($datos[0]->convocatoria_categoria->categorias_metricas);$i++)
                             <tr>
                               <td>{{$datos[0]->convocatoria_categoria->categorias_metricas[$i]->nombre}}</td>
-                              <td>{{$datos[0]->convocatoria_categoria->categorias_metricas[0]->porcentaje}}</td>
+                              <td>{{$datos[0]->convocatoria_categoria->categorias_metricas[$i]->porcentaje}}</td>
                               <td>
                                 <input required type=number max="{{$datos[0]->convocatoria_categoria->categorias_metricas[0]->porcentaje}}">
                               </td>
