@@ -29,6 +29,10 @@ class Convocatoria extends Model
         return $this->hasMany('App\ConvocatoriaEvaluador');
     }
 
+    public function convocatoria_secciones(){
+        return $this->hasMany('App\ConvocatoriaSeccion');
+    }
+
 
 
 }

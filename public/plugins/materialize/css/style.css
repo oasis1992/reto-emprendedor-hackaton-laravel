@@ -25,3 +25,11 @@
 #register_main {
     flex: 1 0 auto;
 }
+
+.cent-card{
+    width: 100% !important;
+}
+
+.card-color{
+    background-color: white; !important;
+}
