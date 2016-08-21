@@ -130,7 +130,6 @@ Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
         'as' => 'convocatoria_create'
     ]);
 
-
     // categorias convocatoria
 
     Route::get('categoria-convocatoria/{convocatoria_id}/create',[
@@ -154,6 +153,11 @@ Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
     Route::post('categoria-metrica-convocatoria/store',[
         'uses' => 'ConvocatoriaCategoriaController@store',
         'as' => 'convocatoria_metricacategoria_store'
+    ]);
+
+    Route::get('charts',[
+        'uses' => 'ChartsController@charts',
+        'as' => 'charts'
     ]);
 
 });
