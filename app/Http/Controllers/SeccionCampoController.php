@@ -8,5 +8,7 @@ use App\Http\Requests;
 
 class SeccionCampoController extends Controller
 {
-    //
+    public function index(){
+
+    }
 }

@@ -41,7 +41,7 @@ Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
     // convocatoria
     Route::get('convocatorias/{organizacion_id}',[
         'uses' => 'ConvocatoriasController@index',
-        'as' => 'convocatoria_index'
+        'as' => 'convocatoria_con_index'
     ]);
 
     Route::get('convocatorias/create/{organizacion_id}',[
@@ -112,5 +112,48 @@ Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
     ]);
 
 
+    // inputs dinamicos (seccion campo)
+
+    Route::post('seccion-campo/store',[
+        'uses' => 'SeccionCampoController@store',
+        'as' => 'convocatoria_store'
+    ]);
+
+    Route::get('seccion-campo/index',[
+        'uses' => 'SeccionCampoController@index',
+        'as' => 'convocatoria_index'
+    ]);
+
+
+    Route::get('seccion-campo/create',[
+        'uses' => 'SeccionCampoController@create',
+        'as' => 'convocatoria_create'
+    ]);
+
+
+    // categorias convocatoria
+
+    Route::get('categoria-convocatoria/{convocatoria_id}/create',[
+        'uses' => 'ConvocatoriaCategoriaController@create',
+        'as' => 'convocatoria_categoria_create'
+    ]);
+
+    Route::post('categoria-convocatoria/store',[
+        'uses' => 'ConvocatoriaCategoriaController@store',
+        'as' => 'convocatoria_categoria_store'
+    ]);
+
+
+    // metrica
+
+    Route::get('categoria-metrica-convocatoria/{convocatoria_categoria_id}/create',[
+        'uses' => 'ConvocatoriaCategoriaController@create',
+        'as' => 'convocatoria_metrica_categoria_create'
+    ]);
+
+    Route::post('categoria-metrica-convocatoria/store',[
+        'uses' => 'ConvocatoriaCategoriaController@store',
+        'as' => 'convocatoria_metricacategoria_store'
+    ]);
 
 });

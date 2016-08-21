@@ -18,7 +18,7 @@
           @foreach($org as $org1)
           <tr>
             <td>{{$org1->nombre}}</td>
-            <td><a href="{{ route('convocatoria_index', ['organizacion_id' => $org1->id]) }}">Ver</a></td>
+            <td><a href="{{ route('convocatoria_con_index', ['organizacion_id' => $org1->id]) }}">Ver</a></td>
             <td>
               <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Acciones!</a>
               <!-- Dropdown Structure -->
