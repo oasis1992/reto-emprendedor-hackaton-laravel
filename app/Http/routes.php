@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('register_user.index');
+    return view('welcome');
 });
 
 Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
@@ -25,4 +25,34 @@ Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
         'uses' => 'AuthController@login_movil',
         'as' => 'login_movil'
     ]);
+
+    Route::get('alta/org/',[
+        'uses' => 'alt_organizacionController@index',
+        'as' => 'alta_org'
+    ]);
+    Route::get('create/org/',[
+        'uses' => 'alt_organizacionController@create',
+        'as' => 'create_org'
+    ]);
+    Route::post('store/org/',[
+        'uses' => 'alt_organizacionController@store',
+        'as' => 'store_org'
+    ]);
+
+////////////////////////////alata de usuario por el super admin
+    Route::get('superadmin/store/user/',[
+        'uses' => 'altaUserCrontroller@create',
+        'as' => 'store_user'
+    ]);
+    Route::post('superadmin/store/user/',[
+        'uses' => 'altaUserCrontroller@store',
+        'as' => 'save_user'
+    ]);
+    Route::get('superadmin/list/user/',[
+        'uses' => 'altaUserCrontroller@index',
+        'as' => 'list_user'
+    ]);
+
+
+
 });

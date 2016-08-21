@@ -15,6 +15,8 @@
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">
 <img src="../../../img/logo.png"/>
     </a>
+    <li><a href="sass.html">Iniciar Sesion</a></li>
+    <li><a href="badges.html">registracion</a></li>
     </div>
   </nav>
   <div class="section no-pad-bot" id="index-banner">
