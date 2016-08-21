@@ -8,8 +8,8 @@
                 <div class="card-panel teal" style="background-color: white !important;">
                     <div class="row">
                         <form class="col s12" action="{{ route('convocatoria_store', $organizacion_id) }}" method="POST">
-
-                            <input type="hidden" value="{{ $organizacion_id }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="organizacion_id" value="{{ $organizacion_id }}">
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input name="nombre" id="first_name" type="text" class="validate">
@@ -33,13 +33,13 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input name="calf_aprobatoria" id="password" type="number" class="validate">
+                                    <input name="calif_aprovatoria" id="password" type="number" class="validate">
                                     <label for="password">Calificación aprovatoria</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="email" name="evaluador_proyecto" type="email" class="validate">
+                                    <input id="email" name="evaluador_proyecto" type="number" class="validate">
                                     <label for="email">Numero de evaluadores</label>
                                 </div>
                             </div>
