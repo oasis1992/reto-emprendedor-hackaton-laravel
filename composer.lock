@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d87b454ae1de3304b18a30fc888ff5e4",
-    "content-hash": "b9a851e39deec9094a8f9f0eb2926c84",
+    "hash": "84f98e8fcb8d4b967b3d4d3e7107dc72",
+    "content-hash": "4c416028ec7935f5f827edddaa126323",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1327,6 +1327,54 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "softon/sms",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/softon/sms.git",
+                "reference": "ab41f2a1876f0d76c89dd561669fd77d8a851100"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/softon/sms/zipball/ab41f2a1876f0d76c89dd561669fd77d8a851100",
+                "reference": "ab41f2a1876f0d76c89dd561669fd77d8a851100",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~5.0|~6.0",
+                "illuminate/support": "~5.0|~6.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Softon\\Sms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shiburaj",
+                    "email": "powerupneo@gmail.com"
+                }
+            ],
+            "description": "Simple SMS Gateway Package for sending short text messages from your Application. Facade for Laravel 5.Currently supported Gateways Clickatell , MVaayoo, Gupshup, SmsAchariya, SmsCountry / Any HTTP/s based Gateways are supported by Custom Gateway. Log gateway can be used for testing.",
+            "keywords": [
+                "Custom Sms",
+                "clickatell",
+                "gupshup",
+                "mvaayoo",
+                "sms gateway",
+                "smsachariya",
+                "smscountry",
+                "smslane"
+            ],
+            "time": "2016-06-22 18:18:25"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3586,7 +3634,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "softon/sms": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

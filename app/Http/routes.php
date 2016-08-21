@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login.index');
 });
 
 Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
@@ -110,6 +110,16 @@ Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
         'as' => 'list_user'
 
     ]);
+
+////////////////////////////flujo de evaluacion
+  Route::get('evaluar/proyect/user/{id}',[
+    'uses' => 'evaluadorController@detallproyect',
+    'as' => 'evaluar_proyect'
+  ]);
+  Route::get('list/proyect/user/',[
+    'uses' => 'evaluadorController@index',
+    'as' => 'list_proyect'
+  ]);
 
 
 
