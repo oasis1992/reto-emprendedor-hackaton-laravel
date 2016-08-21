@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => 'web', 'prefix' => '/'], function() {
+    Route::get('main',[
+       'uses' => 'MainController@index',
+        'as' => 'main'
+    ]);
+
+});
+
+
