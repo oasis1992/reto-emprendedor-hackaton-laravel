@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ConvocatoriaCategoria extends Model
 {
-    protected $table = "convocatorias";
+    protected $table = "convocatoria_categoria";
     //protected $fillable = [];
 
     public function proyectos(){

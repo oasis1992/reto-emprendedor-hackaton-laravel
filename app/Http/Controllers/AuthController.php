@@ -34,8 +34,24 @@ class AuthController extends Controller
         for($i = 0; $i < count($user->proyectos); $i++){
 
           // dd($user->proyectos[0]->proyectos_evaluadores[0]->convocatoria_evaluador->usuario);
-            $data['proyectos'][] = ['nombre' => $user->proyectos[$i]->nombre, 'descripcion' => $user->proyectos[$i]->descripcion,
-                'estado' => $user->proyectos[$i]->estado, 'convocatoria' => $user->proyectos[$i]->convocatoria->name];
+            $estado = $user->proyectos[$i]->estado;
+
+            switch ($estado){
+                case 1:
+                    $estado = "Aceptado";
+                    break;
+                case 2:
+                    $estado = "Rechazado";
+                    break;
+                case 3:
+                    $estado = "En proceso de evaluación";
+                    break;
+                default:
+                    $estado = "No hay estado";
+
+            }
+            $data['proyectos'][] = ['id'=>$user->proyectos[$i]->id,'nombre' => $user->proyectos[$i]->nombre, 'descripcion' => $user->proyectos[$i]->descripcion,
+                'estado' => $estado, 'convocatoria' => $user->proyectos[$i]->convocatoria->name];
 
             for($x = 0; $x < count($user->proyectos[$i]->proyectos_integrantes); $x++){
                 $data['proyectos'][$i]['integrantes'][] = array('nombre' => $user->proyectos[$i]->proyectos_integrantes[$x]->nombre,
